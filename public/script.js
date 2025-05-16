@@ -1,5 +1,6 @@
 const boostDisplay = document.getElementById("boost-count");
 
+// Load initial boost count
 fetch('/api/boosts')
   .then(res => res.json())
   .then(data => {
@@ -22,9 +23,11 @@ function share(platform) {
       break;
   }
 
+  // Open social share link
   window.open(shareUrl, "_blank");
 
-  fetch('/api/boosts', { method: 'POST' })
+  // Call custom API
+  fetch(`/api/share?type=${platform}`)
     .then(res => res.json())
     .then(data => {
       boostDisplay.textContent = data.count;
