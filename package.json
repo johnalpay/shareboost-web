@@ -1,7 +1,7 @@
 {
   "name": "shareboost",
   "version": "1.0.0",
-  "description": "Simple ShareBoost website",
+  "description": "ShareBoost website with custom API endpoint",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
